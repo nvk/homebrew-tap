@@ -1,5 +1,14 @@
 # Nvk Tap
 
+This tap carries a small stack for running coding agents with a narrower trust
+boundary:
+
+- `envchain-xtra` for secret release from Keychain-backed namespaces
+- `agent-bondage` for exact launch verification and policy
+
+The premise is that agents should not run loose with live keys, weak dependency
+provenance, and broad ambient environment access.
+
 ## Formulae
 
 - `ascii-banner`
