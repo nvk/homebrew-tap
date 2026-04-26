@@ -3,13 +3,31 @@
 This tap currently publishes:
 
 - `ascii-banner`
+- `agent-bondage`
 - `envchain-xtra`
+
+The `agent-bondage` formula tracks releases from:
+
+- `https://github.com/nvk/bondage`
 
 The `envchain-xtra` formula tracks releases from:
 
 - `https://github.com/nvk/envchain-xtra`
 
 ## Update Flow
+
+For `agent-bondage`:
+
+1. Release/tag the desired `bondage` commit.
+2. Update `Formula/agent-bondage.rb`:
+   - `tag`
+   - `revision`
+   - `version`
+3. Commit the tap change on `main`.
+4. Push `main`.
+5. Verify install from Homebrew.
+
+For `envchain-xtra`:
 
 1. Release/tag the desired `envchain-xtra` commit.
 2. Update `Formula/envchain-xtra.rb`:
@@ -28,6 +46,7 @@ git -C "$HOME/Library/Mobile Documents/com~apple~CloudDocs/claude-sandbox/homebr
 
 Edit:
 
+- `Formula/agent-bondage.rb`
 - `Formula/envchain-xtra.rb`
 
 Then:
@@ -42,6 +61,7 @@ git -C "$HOME/Library/Mobile Documents/com~apple~CloudDocs/claude-sandbox/homebr
 
 ```zsh
 brew update
+brew install nvk/tap/agent-bondage
 brew install nvk/tap/envchain-xtra
 ```
 

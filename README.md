@@ -3,6 +3,7 @@
 ## Formulae
 
 - `ascii-banner`
+- `agent-bondage`
 - `envchain-xtra`
 
 ## How do I install these formulae?
@@ -35,6 +36,16 @@ If upstream `envchain` is already installed:
 ```zsh
 brew uninstall envchain
 brew install nvk/tap/envchain-xtra
+```
+
+### `agent-bondage`
+
+`agent-bondage` installs the `bondage` executable.
+
+Install it with:
+
+```zsh
+brew install nvk/tap/agent-bondage
 ```
 
 ## Documentation
