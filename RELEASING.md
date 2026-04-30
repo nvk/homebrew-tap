@@ -52,8 +52,8 @@ Edit:
 Then:
 
 ```zsh
-git -C "$HOME/Library/Mobile Documents/com~apple~CloudDocs/claude-sandbox/homebrew-tap" add Formula/envchain-xtra.rb README.md RELEASING.md
-git -C "$HOME/Library/Mobile Documents/com~apple~CloudDocs/claude-sandbox/homebrew-tap" commit -m 'envchain-xtra 1.2.1'
+git -C "$HOME/Library/Mobile Documents/com~apple~CloudDocs/claude-sandbox/homebrew-tap" add Formula/agent-bondage.rb README.md RELEASING.md
+git -C "$HOME/Library/Mobile Documents/com~apple~CloudDocs/claude-sandbox/homebrew-tap" commit -m 'agent-bondage 0.2.0'
 git -C "$HOME/Library/Mobile Documents/com~apple~CloudDocs/claude-sandbox/homebrew-tap" push origin main
 ```
 
