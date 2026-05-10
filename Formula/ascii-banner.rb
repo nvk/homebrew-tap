@@ -3,8 +3,8 @@ class AsciiBanner < Formula
 
   desc "Convert text to ASCII art banners using 328 FIGlet fonts"
   homepage "https://github.com/nvk/ascii-banner"
-  url "https://files.pythonhosted.org/packages/ed/61/cc7730dd3a2e2191f4af2e41afc17a03030a9033d2bdba7a56e7b494d3cc/ascii_banner-0.4.1.tar.gz"
-  sha256 "1e940e18e8492c6256e8688b56d0da5cd2e38ee2435786a6b201f6eb71a8bfbc"
+  url "https://files.pythonhosted.org/packages/eb/31/07d46660f145245784ba3b3605128e6896457082d34b31c9823e67ff4572/ascii_banner-0.5.0.tar.gz"
+  sha256 "e5c6e2aa9516c6ee20c639c88e0b2ae9a77d13331c84a2f3f6abc043fb6503bd"
   license "MIT"
 
   depends_on "python@3.12"
