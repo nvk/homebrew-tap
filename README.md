@@ -5,13 +5,22 @@ boundary:
 
 - `envchain-xtra` for secret release from Keychain-backed namespaces
 - `agent-bondage` for exact launch verification and policy
+- `agentnoise` for controlling local Codex/Claude sessions through White Noise
 
 The premise is that agents should not run loose with live keys, weak dependency
 provenance, and broad ambient environment access.
 
+`agentnoise` exists because the available agent-chat bridges were too heavy,
+too slow-moving, or too awkward for a simple native White Noise to local-agent
+bridge.
+
+The less polite design brief: I had to build it because everything else sucks
+and Jeff moves too slow.
+
 ## Formulae
 
 - `ascii-banner`
+- `agentnoise`
 - `agent-bondage`
 - `envchain-xtra`
 
@@ -57,9 +66,32 @@ Install it with:
 brew install nvk/tap/agent-bondage
 ```
 
+### `agentnoise`
+
+`agentnoise` installs the native desktop helper plus the upstream White Noise
+`wn` and `wnd` binaries.
+
+Install it with:
+
+```zsh
+brew install nvk/tap/agentnoise
+```
+
+Then run first setup:
+
+```zsh
+agentnoise up
+```
+
 ## Documentation
 
 `brew help`, `man brew` or check [Homebrew's documentation](https://docs.brew.sh).
 
 For tap maintenance and release steps, see
 [`RELEASING.md`](RELEASING.md).
+
+## License
+
+MIT License. Copyright (c) 2026 nvk.
+
+This software is provided as-is, without warranty of any kind.

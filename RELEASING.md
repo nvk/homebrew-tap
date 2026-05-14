@@ -3,8 +3,13 @@
 This tap currently publishes:
 
 - `ascii-banner`
+- `agentnoise`
 - `agent-bondage`
 - `envchain-xtra`
+
+The `agentnoise` formula tracks releases from:
+
+- `https://github.com/nvk/agentnoise`
 
 The `agent-bondage` formula tracks releases from:
 
@@ -23,6 +28,18 @@ For `agent-bondage`:
    - `tag`
    - `revision`
    - `version`
+3. Commit the tap change on `main`.
+4. Push `main`.
+5. Verify install from Homebrew.
+
+For `agentnoise`:
+
+1. Release/tag the desired `agentnoise` commit.
+2. Update `Formula/agentnoise.rb`:
+   - `tag`
+   - `revision`
+   - `version`
+   - bundled `whitenoise-rs` `revision` when upgrading White Noise
 3. Commit the tap change on `main`.
 4. Push `main`.
 5. Verify install from Homebrew.
@@ -47,12 +64,13 @@ git -C "$HOME/Library/Mobile Documents/com~apple~CloudDocs/claude-sandbox/homebr
 Edit:
 
 - `Formula/agent-bondage.rb`
+- `Formula/agentnoise.rb`
 - `Formula/envchain-xtra.rb`
 
 Then:
 
 ```zsh
-git -C "$HOME/Library/Mobile Documents/com~apple~CloudDocs/claude-sandbox/homebrew-tap" add Formula/agent-bondage.rb README.md RELEASING.md
+git -C "$HOME/Library/Mobile Documents/com~apple~CloudDocs/claude-sandbox/homebrew-tap" add Formula/agent-bondage.rb Formula/agentnoise.rb README.md RELEASING.md
 git -C "$HOME/Library/Mobile Documents/com~apple~CloudDocs/claude-sandbox/homebrew-tap" commit -m 'agent-bondage 0.2.0'
 git -C "$HOME/Library/Mobile Documents/com~apple~CloudDocs/claude-sandbox/homebrew-tap" push origin main
 ```
@@ -61,6 +79,7 @@ git -C "$HOME/Library/Mobile Documents/com~apple~CloudDocs/claude-sandbox/homebr
 
 ```zsh
 brew update
+brew install nvk/tap/agentnoise
 brew install nvk/tap/agent-bondage
 brew install nvk/tap/envchain-xtra
 ```
