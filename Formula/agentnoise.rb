@@ -3,7 +3,7 @@ class Agentnoise < Formula
   homepage "https://agentnoise.com"
   url "https://github.com/nvk/agentnoise.git",
       tag:      "v0.1.2",
-      revision: "85cb33df924c6f7816663f340c7703d763d5baf4"
+      revision: "85cb33d7366952baab93598df2c2c21c577ae20f"
   license "MIT"
   head "https://github.com/nvk/agentnoise.git", branch: "main"
 
