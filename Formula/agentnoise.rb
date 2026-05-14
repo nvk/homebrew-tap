@@ -4,7 +4,6 @@ class Agentnoise < Formula
   url "https://github.com/nvk/agentnoise.git",
       tag:      "v0.1.1",
       revision: "1cc99899102309f55512fc85d302e66cd4f76391"
-  version "0.1.1"
   license "MIT"
   head "https://github.com/nvk/agentnoise.git", branch: "main"
 
