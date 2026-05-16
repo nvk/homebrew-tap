@@ -23,6 +23,7 @@ and Jeff moves too slow.
 - `agentnoise`
 - `agent-bondage`
 - `envchain-xtra`
+- `whodis`
 
 ## How do I install these formulae?
 
@@ -81,6 +82,16 @@ Then run first setup:
 
 ```zsh
 agentnoise up
+```
+
+### `whodis`
+
+`whodis` installs an RDAP-first domain intelligence CLI.
+
+Install it with:
+
+```zsh
+brew install nvk/tap/whodis
 ```
 
 ## Documentation
