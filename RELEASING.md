@@ -58,7 +58,8 @@ For `envchain-xtra`:
 ## Example
 
 ```zsh
-git -C "$HOME/Library/Mobile Documents/com~apple~CloudDocs/claude-sandbox/homebrew-tap" pull --ff-only origin main
+TAP_DIR=/path/to/homebrew-tap
+git -C "$TAP_DIR" pull --ff-only origin main
 ```
 
 Edit:
@@ -70,9 +71,9 @@ Edit:
 Then:
 
 ```zsh
-git -C "$HOME/Library/Mobile Documents/com~apple~CloudDocs/claude-sandbox/homebrew-tap" add Formula/agent-bondage.rb Formula/agentnoise.rb README.md RELEASING.md
-git -C "$HOME/Library/Mobile Documents/com~apple~CloudDocs/claude-sandbox/homebrew-tap" commit -m 'agent-bondage 0.2.0'
-git -C "$HOME/Library/Mobile Documents/com~apple~CloudDocs/claude-sandbox/homebrew-tap" push origin main
+git -C "$TAP_DIR" add Formula/agent-bondage.rb Formula/agentnoise.rb README.md RELEASING.md
+git -C "$TAP_DIR" commit -m 'agent-bondage 0.2.0'
+git -C "$TAP_DIR" push origin main
 ```
 
 ## Verify

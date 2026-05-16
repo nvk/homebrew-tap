@@ -3,8 +3,8 @@ class Whodis < Formula
 
   desc "RDAP-first domain intelligence CLI"
   homepage "https://github.com/nvk/whodis"
-  url "https://github.com/nvk/whodis/archive/refs/tags/v0.2.1.tar.gz"
-  sha256 "5fdfd4bf2613ae799e614ad5f243d4b7b2b000b09bd8d6ea7d21b58eac694334"
+  url "https://github.com/nvk/whodis/archive/refs/tags/v0.3.0.tar.gz"
+  sha256 "29f80e97af5b2fa10efc0d631a0a3fdc0497f796644ef5f5bd9840f9a2d3d78a"
   license "MIT"
   head "https://github.com/nvk/whodis.git", branch: "master"
 
@@ -80,6 +80,6 @@ class Whodis < Formula
   end
 
   test do
-    assert_match "whodis, version 0.2.1", shell_output("#{bin}/whodis --version")
+    assert_match "whodis, version 0.3.0", shell_output("#{bin}/whodis --version")
   end
 end
