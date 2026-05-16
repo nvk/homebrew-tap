@@ -1,8 +1,8 @@
 class Agentnoise < Formula
   desc "Chat with local coding agents through White Noise"
   homepage "https://agentnoise.org"
-  url "https://github.com/nvk/agentnoise/archive/refs/tags/v0.1.17.tar.gz"
-  sha256 "feff4923641e5384029a136bd2c71fbd6f043d20e79581b6fe0c85593a84a624"
+  url "https://github.com/nvk/agentnoise/archive/refs/tags/v0.1.18.tar.gz"
+  sha256 "610c031869a965b97851927ef32f8d1c7bb18c4fbbff6427a48d39401ca0968e"
   license "MIT"
   head "https://github.com/nvk/agentnoise.git", branch: "main"
 
@@ -36,7 +36,28 @@ class Agentnoise < Formula
     error_log_path var/"log/agentnoise.err.log"
   end
 
+  def caveats
+    <<~EOS
+      Quick start with raw Codex/Claude:
+        agentnoise up --direct-agents
+
+      Then keep it running in the background:
+        brew services start nvk/tap/agentnoise
+
+      Use agentnoise up anytime as the local console. If the service is already
+      running, it attaches instead of starting a second listener.
+
+      Config:
+        agentnoise config path
+        agentnoise config print-template
+        agentnoise doctor
+
+      If you use bondage profiles instead of raw CLIs, omit --direct-agents and
+      provide codex-agentnoise / claude-agentnoise profiles.
+    EOS
+  end
+
   test do
-    assert_match "agentnoise 0.1.17", shell_output("#{bin}/agentnoise --version")
+    assert_match "agentnoise 0.1.18", shell_output("#{bin}/agentnoise --version")
   end
 end
