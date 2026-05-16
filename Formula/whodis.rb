@@ -3,12 +3,27 @@ class Whodis < Formula
 
   desc "RDAP-first domain intelligence CLI"
   homepage "https://github.com/nvk/whodis"
-  url "https://github.com/nvk/whodis/archive/refs/tags/v0.2.0.tar.gz"
-  sha256 "dac915e02a5f016430bfd4d2c635294a0d86429a332e4af0dc77cca325831834"
+  url "https://github.com/nvk/whodis/archive/refs/tags/v0.2.1.tar.gz"
+  sha256 "5fdfd4bf2613ae799e614ad5f243d4b7b2b000b09bd8d6ea7d21b58eac694334"
   license "MIT"
   head "https://github.com/nvk/whodis.git", branch: "master"
 
   depends_on "python@3.13"
+
+  resource "python-whois" do
+    url "https://files.pythonhosted.org/packages/f1/0c/537914eca91ee5ff281309a5ca71da23c0c975cd6658668a44d3fdcf1cc4/python_whois-0.9.6.tar.gz"
+    sha256 "2e6de7b6d70e305a85f4859cd17781ee3f0da3a02a8e94f23cb4cdcd2e400bfa"
+  end
+
+  resource "python-dateutil" do
+    url "https://files.pythonhosted.org/packages/66/c0/0c8b6ad9f17a802ee498c46e004a0eb49bc148f2fd230864601a86dcf6db/python-dateutil-2.9.0.post0.tar.gz"
+    sha256 "37dd54208da7e1cd875388217d5e00ebd4179249f90fb72437e91a35459a0ad3"
+  end
+
+  resource "six" do
+    url "https://files.pythonhosted.org/packages/94/e7/b2c673351809dca68a0e064b6af791aa332cf192da575fd474ed7d6f16a2/six-1.17.0.tar.gz"
+    sha256 "ff70335d468e7eb6ec65b95b99d3a2836546063f63acc5171de367e834932a81"
+  end
 
   resource "dnspython" do
     url "https://files.pythonhosted.org/packages/b5/4a/263763cb2ba3816dd94b08ad3a33d5fdae34ecb856678773cc40a3605829/dnspython-2.7.0.tar.gz"
@@ -65,6 +80,6 @@ class Whodis < Formula
   end
 
   test do
-    assert_match "whodis, version 0.2.0", shell_output("#{bin}/whodis --version")
+    assert_match "whodis, version 0.2.1", shell_output("#{bin}/whodis --version")
   end
 end
