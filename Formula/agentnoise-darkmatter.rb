@@ -1,8 +1,8 @@
 class AgentnoiseDarkmatter < Formula
   desc "Experimental Dark Matter/Marmot v2 build of agentnoise"
   homepage "https://agentnoise.org"
-  url "https://github.com/nvk/agentnoise/releases/download/darkmatter-v0.2.0-alpha.4/agentnoise-darkmatter-0.2.0-alpha.4-aarch64-apple-darwin.tar.gz"
-  sha256 "1d74455751031aaa7181d4994a980bea858b42a35a45dd376ea017a3579fa00d"
+  url "https://github.com/nvk/agentnoise/releases/download/darkmatter-v0.2.0-alpha.5/agentnoise-darkmatter-0.2.0-alpha.5-aarch64-apple-darwin.tar.gz"
+  sha256 "b02cf3d42e4c223de38d72c342723f2fce37e74615dd6641df6a7d025bada992"
   license "MIT"
 
   depends_on arch: :arm64
@@ -19,7 +19,7 @@ class AgentnoiseDarkmatter < Formula
   end
 
   service do
-    run [opt_bin/"agentnoise-dm", "up"]
+    run [opt_bin/"agentnoise-dm", "transport", "run"]
     environment_variables PATH: "#{HOMEBREW_PREFIX}/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
     keep_alive true
     log_path var/"log/agentnoise-darkmatter.log"
@@ -44,8 +44,14 @@ class AgentnoiseDarkmatter < Formula
       Quick start with raw Codex/Claude:
         agentnoise-dm up --direct-agents
 
-      Start at login for testing:
+      Keep the Dark Matter transport alive at login:
         brew services start nvk/tap/agentnoise-darkmatter
+
+      Run coding-agent jobs from a login shell or tmux:
+        agentnoise-dm worker start --tmux
+
+      If the service is already running, agentnoise-dm up opens the local
+      console instead of starting a second transport.
 
       Inspect the isolated config:
         agentnoise-dm config path
