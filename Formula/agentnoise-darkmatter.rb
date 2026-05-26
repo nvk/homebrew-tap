@@ -1,8 +1,8 @@
 class AgentnoiseDarkmatter < Formula
   desc "Experimental Dark Matter/Marmot v2 build of agentnoise"
   homepage "https://agentnoise.org"
-  url "https://github.com/nvk/agentnoise/releases/download/darkmatter-v0.2.0-alpha.7/agentnoise-darkmatter-0.2.0-alpha.7-aarch64-apple-darwin.tar.gz"
-  sha256 "7d63671baacb93ee8d9a83f3810d3fb33fca46b4a5d9ff4205b9602e7f78f055"
+  url "https://github.com/nvk/agentnoise/releases/download/darkmatter-v0.2.0-alpha.8/agentnoise-darkmatter-0.2.0-alpha.8-aarch64-apple-darwin.tar.gz"
+  sha256 "73ebe6e2279e514b1e249cf02475e9862d36ec9264b03af162e038cec5ad2a26"
   license "MIT"
 
   depends_on arch: :arm64
