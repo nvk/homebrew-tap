@@ -21,6 +21,7 @@ and Jeff moves too slow.
 
 - `ascii-banner`
 - `agentnoise`
+- `agentnoise-darkmatter`
 - `agent-bondage`
 - `envchain-xtra`
 - `whodis`
@@ -82,6 +83,24 @@ Then run first setup:
 
 ```zsh
 agentnoise up
+```
+
+### `agentnoise-darkmatter`
+
+`agentnoise-darkmatter` installs the experimental Marmot v2 / Dark Matter
+build as `agentnoise-dm`, isolated from stable `agentnoise`.
+
+Install it with:
+
+```zsh
+brew install nvk/tap/agentnoise-darkmatter
+```
+
+The service keeps transport online; run jobs from a login shell:
+
+```zsh
+brew services start nvk/tap/agentnoise-darkmatter
+agentnoise-dm worker start --tmux
 ```
 
 ### `whodis`
