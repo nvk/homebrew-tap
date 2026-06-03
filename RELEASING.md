@@ -6,6 +6,7 @@ This tap currently publishes:
 - `agentnoise`
 - `agent-bondage`
 - `envchain-xtra`
+- `webdownloader`
 
 The `agentnoise` formula tracks releases from:
 
@@ -18,6 +19,10 @@ The `agent-bondage` formula tracks releases from:
 The `envchain-xtra` formula tracks releases from:
 
 - `https://github.com/nvk/envchain-xtra`
+
+The `webdownloader` formula tracks releases from:
+
+- `https://github.com/nvk/webdownloader`
 
 ## Update Flow
 
@@ -55,6 +60,17 @@ For `envchain-xtra`:
 4. Push `main`.
 5. Verify install from Homebrew.
 
+For `webdownloader`:
+
+1. Release/tag the desired `webdownloader` commit.
+2. Update `Formula/webdownloader.rb`:
+   - `url` tag
+   - `sha256`
+   - Python resources when dependencies change
+3. Commit the tap change on `main`.
+4. Push `main`.
+5. Verify install from Homebrew.
+
 ## Example
 
 ```zsh
@@ -67,6 +83,7 @@ Edit:
 - `Formula/agent-bondage.rb`
 - `Formula/agentnoise.rb`
 - `Formula/envchain-xtra.rb`
+- `Formula/webdownloader.rb`
 
 Then:
 
@@ -83,6 +100,7 @@ brew update
 brew install nvk/tap/agentnoise
 brew install nvk/tap/agent-bondage
 brew install nvk/tap/envchain-xtra
+brew install nvk/tap/webdownloader
 ```
 
 If a previous upstream `envchain` install exists:
@@ -90,4 +108,5 @@ If a previous upstream `envchain` install exists:
 ```zsh
 brew uninstall envchain
 brew install nvk/tap/envchain-xtra
+brew install nvk/tap/webdownloader
 ```
