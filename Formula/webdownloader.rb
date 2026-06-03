@@ -6,6 +6,7 @@ class Webdownloader < Formula
   url "https://github.com/nvk/webdownloader/archive/refs/tags/v1.1.0.tar.gz"
   sha256 "0665fea42c39413df8645570a3c10ff44733c3817904b6468bb49b870099b512"
   license "MIT"
+  revision 1
   head "https://github.com/nvk/webdownloader.git", branch: "main"
 
   depends_on "python@3.14"
