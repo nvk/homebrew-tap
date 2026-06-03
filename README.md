@@ -55,7 +55,7 @@ cask "qrme"
 | `agentnoise` | `agentnoise`, `wn`, `wnd` | `0.1.35` | Stable White Noise mainline control plane for local coding agents. |
 | `agentnoise-darkmatter` | `agentnoise-dm` | `0.2.0-alpha.10` | Experimental Dark Matter/Marmot v2 build, isolated from stable `agentnoise`. |
 | `whodis` | `whodis` | `0.3.0` | RDAP-first domain intelligence CLI. |
-| `webdownloader` | `webdownloader` | `1.0.2` | Save same-domain web pages for offline use. |
+| `webdownloader` | `webdownloader` | `1.1.0` | Save same-domain web pages for offline use. |
 | `ascii-banner` | `ascii-banner` | `0.6.0` | Text-to-ASCII banner generator using FIGlet fonts. |
 | `qrme` cask | macOS Service | `0.1.0` | Show selected text as a QR code from the macOS Services menu. |
 
