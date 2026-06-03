@@ -3,7 +3,7 @@ class TouchidCheck < Formula
   homepage "https://github.com/nvk/bondage"
   url "https://github.com/nvk/bondage.git",
       tag:      "v0.2.7",
-      revision: "50018ccca56fc4903b5698ec9afc3e7b807a3ad0"
+      revision: "50018ccc275db1ef1f4e06f0353ef46fee13d464"
   head "https://github.com/nvk/bondage.git", branch: "main"
 
   depends_on :macos
