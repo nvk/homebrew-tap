@@ -2,8 +2,8 @@ class TouchidCheck < Formula
   desc "macOS Touch ID approval helper for agent launch gates"
   homepage "https://github.com/nvk/bondage"
   url "https://github.com/nvk/bondage.git",
-      tag:      "v0.2.6",
-      revision: "36eaa40d9745ab610b8701abcaaf57f881d55d77"
+      tag:      "v0.2.7",
+      revision: "50018ccca56fc4903b5698ec9afc3e7b807a3ad0"
   head "https://github.com/nvk/bondage.git", branch: "main"
 
   depends_on :macos
