@@ -4,7 +4,7 @@
 class Webdownloader < Formula
   include Language::Python::Virtualenv
 
-  desc "Command-line tool to download websites for offline use with multiple output options"
+  desc "Download websites for offline use"
   homepage "https://github.com/nvk/webdownloader"
   url "https://github.com/nvk/webdownloader/archive/refs/tags/v1.0.2.tar.gz"
   sha256 "b913e17694995905313659435308e63773f2f93d57caab9d62ca5a6a510e47ec"
