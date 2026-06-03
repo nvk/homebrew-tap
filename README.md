@@ -51,7 +51,7 @@ cask "qrme"
 | `agent-bondage` | `bondage` | `0.2.7` | Exact launch verification and policy boundary for local agent profiles. |
 | `touchid-check` | `touchid-check` | `0.2.7` | Optional macOS Touch ID/password approval helper for `bondage` profiles. |
 | `envchain-xtra` | `envchain` | `1.3.1` | Keychain-backed environment launcher; conflicts with upstream `envchain`. |
-| `agentnoise` | `agentnoise`, `wn`, `wnd` | `0.1.34` | Stable White Noise mainline control plane for local coding agents. |
+| `agentnoise` | `agentnoise`, `wn`, `wnd` | `0.1.35` | Stable White Noise mainline control plane for local coding agents. |
 | `agentnoise-darkmatter` | `agentnoise-dm` | `0.2.0-alpha.10` | Experimental Dark Matter/Marmot v2 build, isolated from stable `agentnoise`. |
 | `whodis` | `whodis` | `0.3.0` | RDAP-first domain intelligence CLI. |
 | `ascii-banner` | `ascii-banner` | `0.6.0` | Text-to-ASCII banner generator using FIGlet fonts. |
