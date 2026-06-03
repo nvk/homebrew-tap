@@ -23,8 +23,13 @@ and Jeff moves too slow.
 - `agentnoise`
 - `agentnoise-darkmatter`
 - `agent-bondage`
+- `touchid-check`
 - `envchain-xtra`
 - `whodis`
+
+## Casks
+
+- `qrme`
 
 ## How do I install these formulae?
 
@@ -37,6 +42,19 @@ Or, in a `brew bundle` `Brewfile`:
 ```ruby
 tap "nvk/tap"
 brew "<formula>"
+```
+
+## How do I install these casks?
+
+`brew install --cask nvk/tap/<cask>`
+
+Or `brew tap nvk/tap` and then `brew install --cask <cask>`.
+
+Or, in a `brew bundle` `Brewfile`:
+
+```ruby
+tap "nvk/tap"
+cask "<cask>"
 ```
 
 ### `envchain-xtra`
@@ -66,6 +84,17 @@ Install it with:
 
 ```zsh
 brew install nvk/tap/agent-bondage
+```
+
+### `touchid-check`
+
+`touchid-check` installs the optional macOS Touch ID/password approval helper
+used by `agent-bondage` profiles with `touch_policy = prompt`.
+
+Install it with:
+
+```zsh
+brew install nvk/tap/touchid-check
 ```
 
 ### `agentnoise`
@@ -101,6 +130,16 @@ The service keeps transport online; run jobs from a login shell:
 ```zsh
 brew services start nvk/tap/agentnoise-darkmatter
 agentnoise-dm worker start --tmux
+```
+
+### `qrme`
+
+`qrme` installs the QRMe macOS Service for showing selected text as a QR code.
+
+Install it with:
+
+```zsh
+brew install --cask nvk/tap/qrme
 ```
 
 ### `whodis`
