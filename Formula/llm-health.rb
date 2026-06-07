@@ -3,8 +3,8 @@ class LlmHealth < Formula
 
   desc "Local-first health intelligence CLI and agent plugin scaffold"
   homepage "https://llm-health.net"
-  url "https://github.com/nvk/llm-health/releases/download/v0.0.11/llm_health-0.0.11.tar.gz"
-  sha256 "0e67af00d9aa42763f9e5b0271eee2187d22859e72e2de87e8cccb7062a4a1d0"
+  url "https://github.com/nvk/llm-health/releases/download/v0.0.12/llm_health-0.0.12.tar.gz"
+  sha256 "51dc7cb67174876fc4ad5bb6dbf841385eb0939b2d42f41c40d8166f99e086d2"
   license "MIT"
 
   depends_on "python@3.11"
@@ -52,5 +52,13 @@ class LlmHealth < Formula
     redacted = shell_output("#{bin}/health deid preview #{note} --accept-risk --store #{hub}")
     assert_match "[PERSON_", redacted
     assert redacted.exclude?("Jane Doe")
+    shell_output("#{bin}/health enroll --alias alex --birth-year 1983 --accept-risk --store #{hub}")
+    draft = shell_output("#{bin}/health operator draft --profile alex --intent review --store #{hub}")
+    assert_match "approval_required: true", draft
+    draft_id = draft[/draft_id: (draft_[a-f0-9]+)/, 1]
+    finalized = shell_output("#{bin}/health operator finalize --draft-id #{draft_id} --approve --store #{hub}")
+    assert_match "finalized:", finalized
+    traces = shell_output("#{bin}/health operator traces --profile alex --store #{hub}")
+    assert_match "fingerprints:", traces
   end
 end
