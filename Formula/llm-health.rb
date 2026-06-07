@@ -3,8 +3,8 @@ class LlmHealth < Formula
 
   desc "Local-first health intelligence CLI and agent plugin scaffold"
   homepage "https://llm-health.net"
-  url "https://github.com/nvk/llm-health/releases/download/v0.0.19/llm_health-0.0.19.tar.gz"
-  sha256 "99e541adc923b207f62fe7cc20b65bbd63059d61a76a74e235c651f2abb255f0"
+  url "https://github.com/nvk/llm-health/releases/download/v0.0.20/llm_health-0.0.20.tar.gz"
+  sha256 "7d385cbb41e5f7c2a4f044f56728b8233935902e8596349f0caae0b27b9986f0"
   license "MIT"
 
   depends_on "python@3.11"
@@ -29,6 +29,9 @@ class LlmHealth < Formula
       Then import the latest de-identified health-assessment wiki rows with:
         health sync-v2 --wiki-root <health-assessments-topic-root> --profile all
 
+      Archive a privacy-scanned HUB snapshot for future reference with:
+        health archive create
+
       Agent plugin templates are available at:
         health plugin-paths
 
@@ -45,6 +48,12 @@ class LlmHealth < Formula
     assert_path_exists hub/"agreement.json"
     assert_path_exists hub/"manifest.json"
     assert_match "local-service", shell_output("#{bin}/health capabilities")
+    assert_match "archive", shell_output("#{bin}/health capabilities")
+    archive = shell_output("#{bin}/health archive create --store #{hub}")
+    assert_match "skipped: 0", archive
+    archive_path = archive[/archive: (.*\.tar\.gz)/, 1]
+    assert_path_exists archive_path
+    assert_match "status: ok", shell_output("#{bin}/health archive verify --store #{hub} #{archive_path}")
     service_out = shell_output("#{bin}/health service --local --smoke --accept-risk --store #{hub}")
     assert_match "status: smoke-ok", service_out
     note = testpath/"synthetic-note.txt"
