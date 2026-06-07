@@ -3,8 +3,8 @@ class LlmHealth < Formula
 
   desc "Local-first health intelligence CLI and agent plugin scaffold"
   homepage "https://llm-health.net"
-  url "https://github.com/nvk/llm-health/releases/download/v0.0.10/llm_health-0.0.10.tar.gz"
-  sha256 "e2b3ddc1bfc5d8eb0c97c2733a2cc4915e68e5f03c378e382fe26e01d59d68d3"
+  url "https://github.com/nvk/llm-health/releases/download/v0.0.11/llm_health-0.0.11.tar.gz"
+  sha256 "0e67af00d9aa42763f9e5b0271eee2187d22859e72e2de87e8cccb7062a4a1d0"
   license "MIT"
 
   depends_on "python@3.11"
@@ -44,5 +44,13 @@ class LlmHealth < Formula
     assert_match "Initialized", shell_output("#{bin}/health config hub-path #{hub} --init --accept-risk")
     assert_path_exists hub/"agreement.json"
     assert_path_exists hub/"manifest.json"
+    assert_match "local-service", shell_output("#{bin}/health capabilities")
+    service_out = shell_output("#{bin}/health service --local --smoke --accept-risk --store #{hub}")
+    assert_match "status: smoke-ok", service_out
+    note = testpath/"synthetic-note.txt"
+    note.write "Patient: Jane Doe\nEmail: jane@example.com\n"
+    redacted = shell_output("#{bin}/health deid preview #{note} --accept-risk --store #{hub}")
+    assert_match "[PERSON_", redacted
+    assert redacted.exclude?("Jane Doe")
   end
 end
