@@ -3,8 +3,8 @@ class LlmHealth < Formula
 
   desc "Local-first health intelligence CLI and agent plugin scaffold"
   homepage "https://llm-health.net"
-  url "https://github.com/nvk/llm-health/releases/download/v0.0.12/llm_health-0.0.12.tar.gz"
-  sha256 "51dc7cb67174876fc4ad5bb6dbf841385eb0939b2d42f41c40d8166f99e086d2"
+  url "https://github.com/nvk/llm-health/releases/download/v0.0.13/llm_health-0.0.13.tar.gz"
+  sha256 "1a3d2b4f0391a8e6aae524d81c95b501996c605290dd4e75ed11e5201f8ba8b6"
   license "MIT"
 
   depends_on "python@3.11"
@@ -53,6 +53,15 @@ class LlmHealth < Formula
     assert_match "[PERSON_", redacted
     assert redacted.exclude?("Jane Doe")
     shell_output("#{bin}/health enroll --alias alex --birth-year 1983 --accept-risk --store #{hub}")
+    shell_output("#{bin}/health enroll --alias parenta --birth-year 1955 --accept-risk --store #{hub}")
+    family_add = "#{bin}/health family add --profile alex --relative parenta"
+    family_add += " --relation father --shared-household yes --store #{hub}"
+    shell_output(family_add)
+    family_condition = "#{bin}/health family condition --profile parenta"
+    family_condition += " --condition 'Gilbert syndrome' --status believed --evidence context --store #{hub}"
+    shell_output(family_condition)
+    family = shell_output("#{bin}/health family risks --profile alex --store #{hub}")
+    assert_match "HEREDITARY_RISK", family
     draft = shell_output("#{bin}/health operator draft --profile alex --intent review --store #{hub}")
     assert_match "approval_required: true", draft
     draft_id = draft[/draft_id: (draft_[a-f0-9]+)/, 1]
