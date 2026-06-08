@@ -3,16 +3,17 @@ class LlmHealth < Formula
 
   desc "Local-first health intelligence CLI and agent plugin scaffold"
   homepage "https://llm-health.net"
-  url "https://github.com/nvk/llm-health/releases/download/v0.0.21/llm_health-0.0.21.tar.gz"
-  sha256 "6ae8c3382cfb60756e8f931da8ce6aeab71d013b25331808de2a9cd4813f0e33"
+  url "https://github.com/nvk/llm-health/releases/download/v0.0.22/llm_health-0.0.22.tar.gz"
+  sha256 "c18a29e87a517e4074d9d44540a9d6a73a7fd4d9776d51b08f2918e9643a8128"
   license "MIT"
 
   depends_on "python@3.11"
+  depends_on "poppler"
 
   def install
     venv = virtualenv_create(libexec, "python3.11")
     system venv.root/"bin/python", "-m", "pip", "install", "--upgrade", "pip", "setuptools", "wheel"
-    system venv.root/"bin/python", "-m", "pip", "install", ".[v2-core]"
+    system venv.root/"bin/python", "-m", "pip", "install", ".[v2-core,source-audit]"
 
     bin.install_symlink libexec/"bin/health"
     bin.install_symlink libexec/"bin/llm-health"
@@ -32,6 +33,10 @@ class LlmHealth < Formula
       Archive a privacy-scanned HUB snapshot for future reference with:
         health archive create
 
+      Audit private source reads with:
+        health source-vault init
+        health source-audit run --focus medium
+
       Agent plugin templates are available at:
         health plugin-paths
 
@@ -49,6 +54,8 @@ class LlmHealth < Formula
     assert_path_exists hub/"manifest.json"
     assert_match "local-service", shell_output("#{bin}/health capabilities")
     assert_match "archive", shell_output("#{bin}/health capabilities")
+    assert_match "source-vault-audit", shell_output("#{bin}/health capabilities")
+    assert_match "Initialized source vault", shell_output("#{bin}/health source-vault init --store #{hub}")
     archive = shell_output("#{bin}/health archive create --store #{hub}")
     assert_match "skipped: 0", archive
     archive_path = archive[/archive: (.*\.tar\.gz)/, 1]
