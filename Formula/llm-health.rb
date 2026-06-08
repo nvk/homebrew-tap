@@ -3,8 +3,8 @@ class LlmHealth < Formula
 
   desc "Local-first health intelligence CLI and agent plugin scaffold"
   homepage "https://llm-health.net"
-  url "https://github.com/nvk/llm-health/releases/download/v0.0.25/llm_health-0.0.25.tar.gz"
-  sha256 "e09ca97822ad1a75a2ad415cc91c2c74cb650192e1c32f38e5ecfce5867ef30f"
+  url "https://github.com/nvk/llm-health/releases/download/v0.0.26/llm_health-0.0.26.tar.gz"
+  sha256 "afb3a94e869e496f4893dca5007a8007fe2bb680fdda936bed829d189691f980"
   license "MIT"
 
   depends_on "python@3.11"
