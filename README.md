@@ -23,6 +23,7 @@ Install one package directly:
 ```sh
 brew install nvk/tap/agent-bondage
 brew install nvk/tap/agentnoise
+brew install nvk/tap/edpdf
 brew install --cask nvk/tap/qrme
 ```
 
@@ -30,7 +31,7 @@ Or tap once and install by short name:
 
 ```sh
 brew tap nvk/tap
-brew install agent-bondage agentnoise whodis webdownloader
+brew install agent-bondage agentnoise edpdf whodis webdownloader
 brew install --cask qrme
 ```
 
@@ -41,6 +42,7 @@ tap "nvk/tap"
 brew "agent-bondage"
 brew "envchain-xtra"
 brew "agentnoise"
+brew "edpdf"
 brew "webdownloader"
 cask "qrme"
 ```
@@ -54,6 +56,7 @@ cask "qrme"
 | `envchain-xtra` | `envchain` | `1.3.1` | Keychain-backed environment launcher; conflicts with upstream `envchain`. |
 | `agentnoise` | `agentnoise`, `wn`, `wnd` | `0.1.35` | Stable White Noise mainline control plane for local coding agents. |
 | `agentnoise-darkmatter` | `agentnoise-dm` | `0.2.0-alpha.10` | Experimental Dark Matter/Marmot v2 build, isolated from stable `agentnoise`. |
+| `edpdf` | `edpdf` | `0.1.0` | Edit, unlock, rebuild, and inspect PDFs with native macOS selectors. |
 | `whodis` | `whodis` | `0.3.0` | RDAP-first domain intelligence CLI. |
 | `webdownloader` | `webdownloader` | `1.1.0` | Save same-domain web pages for offline use. |
 | `ascii-banner` | `ascii-banner` | `0.6.0` | Text-to-ASCII banner generator using FIGlet fonts. |
@@ -136,6 +139,7 @@ More: <https://agentnoise.org/> and
 brew install nvk/tap/whodis
 brew install nvk/tap/webdownloader
 brew install nvk/tap/ascii-banner
+brew install nvk/tap/edpdf
 brew install --cask nvk/tap/qrme
 ```
 

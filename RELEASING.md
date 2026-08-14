@@ -7,6 +7,7 @@ This tap currently publishes:
 - `agent-bondage`
 - `envchain-xtra`
 - `webdownloader`
+- `edpdf`
 
 The `agentnoise` formula tracks releases from:
 
@@ -23,6 +24,10 @@ The `envchain-xtra` formula tracks releases from:
 The `webdownloader` formula tracks releases from:
 
 - `https://github.com/nvk/webdownloader`
+
+The `edpdf` formula tracks releases from:
+
+- `https://github.com/nvk/edpdf`
 
 ## Update Flow
 
@@ -71,6 +76,16 @@ For `webdownloader`:
 4. Push `main`.
 5. Verify install from Homebrew.
 
+For `edpdf`:
+
+1. Release/tag the desired `edpdf` commit.
+2. Update `Formula/edpdf.rb`:
+   - `url` tag
+   - `sha256`
+3. Update the packaged version in `README.md`.
+4. Commit and push the tap change on `main`.
+5. Verify with `brew install nvk/tap/edpdf` and `brew test nvk/tap/edpdf`.
+
 ## Example
 
 ```zsh
@@ -88,7 +103,7 @@ Edit:
 Then:
 
 ```zsh
-git -C "$TAP_DIR" add Formula/agent-bondage.rb Formula/agentnoise.rb README.md RELEASING.md
+git -C "$TAP_DIR" add Formula/agent-bondage.rb Formula/agentnoise.rb Formula/edpdf.rb README.md RELEASING.md
 git -C "$TAP_DIR" commit -m 'agent-bondage 0.2.0'
 git -C "$TAP_DIR" push origin main
 ```
@@ -101,6 +116,7 @@ brew install nvk/tap/agentnoise
 brew install nvk/tap/agent-bondage
 brew install nvk/tap/envchain-xtra
 brew install nvk/tap/webdownloader
+brew install nvk/tap/edpdf
 ```
 
 If a previous upstream `envchain` install exists:
