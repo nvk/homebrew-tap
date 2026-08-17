@@ -9,6 +9,11 @@ This tap currently publishes:
 - `webdownloader`
 - `edpdf`
 
+Development-only, unreleased formula:
+
+- `llm-wiki-chrome` (`--HEAD` only; do not add a stable URL until the private
+  connector release is explicitly approved)
+
 The `agentnoise` formula tracks releases from:
 
 - `https://github.com/nvk/agentnoise`
@@ -85,6 +90,14 @@ For `edpdf`:
 3. Update the packaged version in `README.md`.
 4. Commit and push the tap change on `main`.
 5. Verify with `brew install nvk/tap/edpdf` and `brew test nvk/tap/edpdf`.
+
+For `llm-wiki-chrome`, only after explicit release approval:
+
+1. Release/tag the approved browser-execution commit.
+2. Replace or supplement the formula's `head` with an immutable source URL and
+   SHA-256.
+3. Verify a clean install, isolated native-host registration, doctor, and
+   uninstall before changing the README from `development HEAD`.
 
 ## Example
 
