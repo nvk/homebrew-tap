@@ -1,7 +1,7 @@
 class LlmWikiChrome < Formula
   desc "Private local connector for explicitly shared Chrome tabs"
-  homepage "https://github.com/nvk/llm-wiki-adapter-browser-execution"
-  head "https://github.com/nvk/llm-wiki-adapter-browser-execution.git", branch: "main"
+  homepage "https://github.com/nvk/llm-wiki-chrome"
+  head "https://github.com/nvk/llm-wiki-chrome.git", branch: "main"
 
   depends_on "python@3.14"
 
