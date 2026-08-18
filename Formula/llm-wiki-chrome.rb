@@ -1,5 +1,5 @@
 class LlmWikiChrome < Formula
-  desc "Private local connector for explicitly shared Chrome tabs"
+  desc "Local connector for explicitly shared Chrome tabs"
   homepage "https://github.com/nvk/llm-wiki-chrome"
   head "https://github.com/nvk/llm-wiki-chrome.git", branch: "main"
 

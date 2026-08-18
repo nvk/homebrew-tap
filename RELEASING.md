@@ -11,7 +11,7 @@ This tap currently publishes:
 
 Development-only, unreleased formula:
 
-- `llm-wiki-chrome` (`--HEAD` only; do not add a stable URL until the private
+- `llm-wiki-chrome` (`--HEAD` only; do not add a stable URL until the
   connector release is explicitly approved)
 
 The `agentnoise` formula tracks releases from:
