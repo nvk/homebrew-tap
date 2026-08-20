@@ -8,11 +8,7 @@ This tap currently publishes:
 - `envchain-xtra`
 - `webdownloader`
 - `edpdf`
-
-Development-only, unreleased formula:
-
-- `llm-wiki-chrome` (`--HEAD` only; do not add a stable URL until the
-  connector release is explicitly approved)
+- `llm-wiki-chrome`
 
 The `agentnoise` formula tracks releases from:
 
@@ -94,10 +90,10 @@ For `edpdf`:
 For `llm-wiki-chrome`, only after explicit release approval:
 
 1. Release/tag the approved browser-execution commit.
-2. Replace or supplement the formula's `head` with an immutable source URL and
-   SHA-256.
-3. Verify a clean install, isolated native-host registration, doctor, and
-   uninstall before changing the README from `development HEAD`.
+2. Update the immutable source URL, SHA-256, and version while retaining the
+   optional `head` declaration.
+3. Verify a clean install, isolated native-host registration, doctor, test, and
+   uninstall before updating the packaged version in the README.
 
 ## Example
 
