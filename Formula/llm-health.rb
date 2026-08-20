@@ -7,8 +7,8 @@ class LlmHealth < Formula
   sha256 "a3cc8bb4cee4b9f84fc7a6edac0b5213219a12fe05058fa08b650017db477717"
   license "MIT"
 
-  depends_on "python@3.11"
   depends_on "poppler"
+  depends_on "python@3.11"
 
   def install
     venv = virtualenv_create(libexec, "python3.11")
