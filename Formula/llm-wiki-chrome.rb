@@ -1,6 +1,8 @@
 class LlmWikiChrome < Formula
   desc "Local connector for explicitly shared Chrome tabs"
   homepage "https://github.com/nvk/llm-wiki-chrome"
+  url "https://github.com/nvk/llm-wiki-chrome/archive/refs/tags/v0.1.0.tar.gz"
+  sha256 "4c6d63abc3d2d50df5a540adb959a166f8fa196983c47fa35be70ca43cdbfa10"
   head "https://github.com/nvk/llm-wiki-chrome.git", branch: "master"
 
   depends_on "python@3.14"
@@ -10,15 +12,13 @@ class LlmWikiChrome < Formula
     (bin/"llm-wiki-chrome").write <<~SH
       #!/bin/sh
       export LLM_WIKI_CHROME_EXTENSION_DIR="#{opt_libexec}/extension"
-      exec "#{Formula["python@3.14"].opt_bin}/python3.14" "#{opt_libexec}/adapter.py" "$@"
+      exec "#{formula_opt_bin("python@3.14")}/python3.14" "#{opt_libexec}/adapter.py" "$@"
     SH
     chmod 0755, bin/"llm-wiki-chrome"
   end
 
   def caveats
     <<~EOS
-      This is a development-only HEAD formula until a release is explicitly approved.
-
       Register the local Chrome Native Messaging connector once with:
         llm-wiki-chrome install
 

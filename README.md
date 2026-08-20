@@ -24,7 +24,7 @@ Install one package directly:
 brew install nvk/tap/agent-bondage
 brew install nvk/tap/agentnoise
 brew install nvk/tap/edpdf
-brew install --HEAD nvk/tap/llm-wiki-chrome
+brew install nvk/tap/llm-wiki-chrome
 brew install --cask nvk/tap/qrme
 ```
 
@@ -58,7 +58,7 @@ cask "qrme"
 | `agentnoise` | `agentnoise`, `wn`, `wnd` | `0.1.35` | Stable White Noise mainline control plane for local coding agents. |
 | `agentnoise-darkmatter` | `agentnoise-dm` | `0.2.0-alpha.10` | Experimental Dark Matter/Marmot v2 build, isolated from stable `agentnoise`. |
 | `edpdf` | `edpdf` | `0.1.0` | Edit, unlock, rebuild, and inspect PDFs with native macOS selectors. |
-| `llm-wiki-chrome` | `llm-wiki-chrome` | development HEAD | Public-source connector and CLI for explicitly shared Chrome tabs. |
+| `llm-wiki-chrome` | `llm-wiki-chrome` | `0.1.0` | Public-source connector and CLI for explicitly shared Chrome tabs. |
 | `whodis` | `whodis` | `0.3.0` | RDAP-first domain intelligence CLI. |
 | `webdownloader` | `webdownloader` | `1.1.0` | Save same-domain web pages for offline use. |
 | `ascii-banner` | `ascii-banner` | `0.6.0` | Text-to-ASCII banner generator using FIGlet fonts. |
@@ -142,7 +142,7 @@ brew install nvk/tap/whodis
 brew install nvk/tap/webdownloader
 brew install nvk/tap/ascii-banner
 brew install nvk/tap/edpdf
-brew install --HEAD nvk/tap/llm-wiki-chrome
+brew install nvk/tap/llm-wiki-chrome
 brew install --cask nvk/tap/qrme
 ```
 

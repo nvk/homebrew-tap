@@ -4,17 +4,16 @@ class EnvchainXtra < Formula
   url "https://github.com/nvk/envchain-xtra.git",
       tag:      "v1.3.1",
       revision: "b272204b5c13eb266f4cb9a3989cf5408a7c63f3"
-  version "1.3.1"
   license "MIT"
   head "https://github.com/nvk/envchain-xtra.git", branch: "master"
-
-  conflicts_with "envchain", because: "both install the envchain executable"
 
   on_linux do
     depends_on "pkgconf" => :build
     depends_on "libsecret"
     depends_on "readline"
   end
+
+  conflicts_with "envchain", because: "both install the envchain executable"
 
   def install
     system "make"

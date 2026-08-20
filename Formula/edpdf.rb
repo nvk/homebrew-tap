@@ -20,4 +20,3 @@ class Edpdf < Formula
     assert_match "edpdf 0.1.0", shell_output("#{bin}/edpdf --version")
   end
 end
-
