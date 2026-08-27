@@ -1,8 +1,8 @@
 class LlmWikiChrome < Formula
   desc "Local connector for explicitly shared Chrome tabs"
   homepage "https://github.com/nvk/llm-wiki-chrome"
-  url "https://github.com/nvk/llm-wiki-chrome/archive/refs/tags/v0.1.0.tar.gz"
-  sha256 "4c6d63abc3d2d50df5a540adb959a166f8fa196983c47fa35be70ca43cdbfa10"
+  url "https://github.com/nvk/llm-wiki-chrome/archive/refs/tags/v0.1.1.tar.gz"
+  sha256 "efa68b6f52e8325f4011553e62b3c6bf79468b1b42e02ad165d9ca8739be9526"
   head "https://github.com/nvk/llm-wiki-chrome.git", branch: "master"
 
   depends_on "python@3.14"
