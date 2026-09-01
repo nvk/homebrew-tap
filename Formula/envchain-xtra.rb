@@ -2,8 +2,9 @@ class EnvchainXtra < Formula
   desc "Keychain-backed environment launcher with macOS-focused fixes"
   homepage "https://github.com/nvk/envchain-xtra"
   url "https://github.com/nvk/envchain-xtra.git",
-      tag:      "v1.3.1",
-      revision: "b272204b5c13eb266f4cb9a3989cf5408a7c63f3"
+      tag:      "v1.4.0",
+      revision: "9e654fb43f79380afc6f785c2730440ab5b99fc8"
+  version "1.4.0"
   license "MIT"
   head "https://github.com/nvk/envchain-xtra.git", branch: "master"
 
