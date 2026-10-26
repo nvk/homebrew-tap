@@ -52,7 +52,7 @@ cask "qrme"
 
 | Formula / cask | Installed command | Current packaged version | What it is |
 | --- | --- | --- | --- |
-| `agent-bondage` | `bondage` | `0.2.7` | Exact launch verification and policy boundary for local agent profiles. |
+| `agent-bondage` | `bondage` | `0.3.1` | Exact launch verification and policy boundary for local agent profiles. |
 | `touchid-check` | `touchid-check` | `0.2.7` | Optional macOS Touch ID/password approval helper for `bondage` profiles. |
 | `envchain-xtra` | `envchain` | `1.3.1` | Keychain-backed environment launcher; conflicts with upstream `envchain`. |
 | `agentnoise` | `agentnoise`, `wn`, `wnd` | `0.1.35` | Stable White Noise mainline control plane for local coding agents. |
