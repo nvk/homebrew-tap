@@ -2,9 +2,9 @@ class AgentBondage < Formula
   desc "Trusted C launcher for local AI agent stacks"
   homepage "https://github.com/nvk/bondage"
   url "https://github.com/nvk/bondage.git",
-      tag:      "v0.2.8",
-      revision: "9a8db25673338bc80b71262a69c9328e690fb2f3"
-  version "0.2.8"
+      tag:      "v0.2.9",
+      revision: "aaf979e875049d70e2466eddb841baa1d3cfb087"
+  version "0.2.9"
   head "https://github.com/nvk/bondage.git", branch: "main"
 
   def install
